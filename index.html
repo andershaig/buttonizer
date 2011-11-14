@@ -16,11 +16,6 @@
 
 <body>
 <div class="container_16">
-    <div class="grid_16">
-    	<div id="header">
-    	<img src="img/logo.png" alt="CSS3 Buttonizer" id="logo" />
-        </div>
-    </div>
     
     <div id="main" class="grid_16">
         <div class="grid_7 alpha">
@@ -34,7 +29,7 @@
                 
                 <div class="controlInput">
                 <label>Choose your button text:</label>
-                <input type="text" id="button-text" class="txtin" value="" />
+                <input type="text" id="button-text" class="txtin" placeholder="Your Button" value="" />
                 </div>
                 
                 <div class="controlSlider">
@@ -44,13 +39,7 @@
                 
                 <div id="colorWrapper">
                 <div id="colorSample">
-                <!--
-                ********************************
-                *** Label seems unnecessary. ***
-                ********************************
-                
-                	<label>Pick a main color:</label><br />
-            	-->
+
                 <input type="text" id="colorInput" class="colorIn" placeholder="Pick a color" value="#FFFFFF" />
                 </div>
                 
@@ -75,7 +64,9 @@
                 
                 <div class="controlSlider">
                 <label>Font style options:</label><br />
-                 Checkboxes for normal / bold / italic / uppercase
+                <div><input type="checkbox" name="font-style" value="bold" /> Bold</div>
+                <div><input type="checkbox" name="font-style" value="bold" /> Italic</div>
+                <div><input type="checkbox" name="font-style" value="bold" /> All Caps</div>
                 </div>
                 
                 <div class="controlSlider">
@@ -85,7 +76,8 @@
                 
                 <div class="controlSlider">
                 <label>What type of background should we optimize the buttons for?</label><br />
-                 Radio for Light // Radio for Dark
+                <div><input type="radio" name="bg_darkness" value="light" /> Light</div>
+                <div><input type="radio" name="bg_darkness" value="dark" /> Dark</div>
                 </div>
 
             </div>

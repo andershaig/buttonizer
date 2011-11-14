@@ -7,14 +7,15 @@ $(document).ready(function() {
     minFontSize:    10,
     maxFontSize:    30,
     minPadding:    	 1,
-    maxPadding:    	10
+    maxPadding:    	20
   }
   
   var css = {
     className:      'minim',
     fontSize:       '15px',
     fontWeight:     '700',
-    padding:        '7px 20px',
+    paddingTB:      '7px',
+    paddingLR:      '20px',
     borderRadius:   '3px',
     primaryColor:	'#3a89a8'
   };
@@ -28,23 +29,27 @@ $(document).ready(function() {
     ,'  display:                inline-block;'
     ,'  font-size:              ${fontSize};'
     ,'  font-weight:            ${fontWeight};'
-    ,'  padding:                ${padding};'
+    ,'  padding:                ${paddingTB} ${paddingLR};'
+    ,'  -webkit-border-radius:  ${borderRadius};'
     ,'  -moz-border-radius:     ${borderRadius};'
     ,'  border-radius:          ${borderRadius};'
     ,'  text-decoration:        none;'
     ,'}'
   ].join("\n");
+  
   tmpl = $.template(tmpl, {compile:true});
   
   var buttonStyleTmpl = [
     'display:                 inline-block;'
     ,'font-size:              ${fontSize};'
     ,'font-weight:            ${fontWeight};'
-    ,'padding:                ${padding};'
+    ,'padding:                ${paddingTB} ${paddingLR};'
+    ,'-webkit-border-radius:  ${borderRadius};'
     ,'-moz-border-radius:     ${borderRadius};'
     ,'border-radius:          ${borderRadius};'
     ,'text-decoration:        none;'    
   ].join('');
+  
   buttonStyleTmpl = $.template(buttonStyleTmpl, { compile: true} );
   
   var generateCss = function() { 
@@ -91,7 +96,8 @@ $(document).ready(function() {
   });
   
   var setPadding = function(event,ui) {
-    css.padding = ui.value + 'px'; 
+    css.paddingTB = ui.value + 'px'; 
+    css.paddingLR = ui.value * 2 + 'px'; 
     preview();
   };
   $('#paddingSlider').slider({
